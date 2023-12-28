@@ -919,9 +919,9 @@ GameObject:
   - component: {fileID: 5352637373926197869}
   - component: {fileID: 6994065572786647451}
   - component: {fileID: 1794449374292967905}
-  - component: {fileID: 5546914604761663772}
+  - component: {fileID: 8425273946553534885}
   m_Layer: 5
-  m_Name: Crambo Wrapper
+  m_Name: Crembo Wrapper
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -944,8 +944,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -527, y: -113}
-  m_SizeDelta: {x: 300, y: 300}
+  m_AnchoredPosition: {x: -521.0477, y: -134.29456}
+  m_SizeDelta: {x: 527.65, y: 594.5891}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &6994065572786647451
 CanvasRenderer:
@@ -985,7 +985,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5546914604761663772
+--- !u!114 &8425273946553534885
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -994,41 +994,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 4752574015900108584}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Script: {fileID: 11500000, guid: d2cc42bb543214ea79760395071877f5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_Navigation:
-    m_Mode: 3
-    m_WrapAround: 0
-    m_SelectOnUp: {fileID: 0}
-    m_SelectOnDown: {fileID: 0}
-    m_SelectOnLeft: {fileID: 0}
-    m_SelectOnRight: {fileID: 0}
-  m_Transition: 1
-  m_Colors:
-    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
-    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
-    m_ColorMultiplier: 1
-    m_FadeDuration: 0.1
-  m_SpriteState:
-    m_HighlightedSprite: {fileID: 0}
-    m_PressedSprite: {fileID: 0}
-    m_SelectedSprite: {fileID: 0}
-    m_DisabledSprite: {fileID: 0}
-  m_AnimationTriggers:
-    m_NormalTrigger: Normal
-    m_HighlightedTrigger: Highlighted
-    m_PressedTrigger: Pressed
-    m_SelectedTrigger: Selected
-    m_DisabledTrigger: Disabled
-  m_Interactable: 1
-  m_TargetGraphic: {fileID: 1794449374292967905}
-  m_OnClick:
-    m_PersistentCalls:
-      m_Calls: []
+  initialRotationSpeed: 2
+  sensitivity: 5
+  objectToRotate: {fileID: 0}
 --- !u!1 &5189232434880611998
 GameObject:
   m_ObjectHideFlags: 0
@@ -1041,6 +1012,7 @@ GameObject:
   - component: {fileID: 4167894934030445966}
   - component: {fileID: 175688113929849709}
   - component: {fileID: 2732220726297047528}
+  - component: {fileID: 3600752721876777587}
   m_Layer: 5
   m_Name: GameCanvas
   m_TagString: Untagged
@@ -1133,6 +1105,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &3600752721876777587
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5189232434880611998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f35b20f8adc54147b2845a1dfa03e97, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &5292557344669387366
 GameObject:
   m_ObjectHideFlags: 0
@@ -1536,7 +1520,7 @@ GameObject:
   - component: {fileID: 4343896301282528600}
   - component: {fileID: 7022952191916215686}
   m_Layer: 5
-  m_Name: CramboScreen
+  m_Name: CremboScreen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

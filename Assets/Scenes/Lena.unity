@@ -399,6 +399,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 445d993cbff674aaab5046a506f07858, type: 3}
+--- !u!4 &1626901608954005959 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2743112952384619509, guid: 445d993cbff674aaab5046a506f07858, type: 3}
+  m_PrefabInstance: {fileID: 1626901608954005958}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7225931875887346272
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -548,6 +553,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 8425273946553534885, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
+      propertyPath: objectToRotate
+      value: 
+      objectReference: {fileID: 1626901608954005959}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
