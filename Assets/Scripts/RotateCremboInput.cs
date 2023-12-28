@@ -12,13 +12,21 @@ namespace CremboFactory {
 
         protected void Awake() {
             _touchInputHandler = FindObjectOfType<TouchInputHandler>();
+            _touchInputHandler.OnTouchPress += OnPress;
             _touchInputHandler.OnTouchDrag += OnDrag;
+            _touchInputHandler.OnTouchRelease += OnRelease;
         }
+
 
         protected void OnDestroy() {
             _touchInputHandler.OnTouchDrag -= OnDrag;
         }
 
+        private void OnPress(PointerEventData obj)
+        {
+            
+        }
+        
         private void OnDrag(PointerEventData eventData) {
             var direction = new Vector3(eventData.delta.y, -eventData.delta.x, 0f);
             var dragSpeed = eventData.delta.magnitude * initialRotationSpeed * sensitivity;
@@ -26,5 +34,12 @@ namespace CremboFactory {
             //Debug.Log($"Drag speed is {eventData.delta.magnitude}");
             MessagingSystem.RotationSpeed?.Invoke(eventData.delta.magnitude);
         }
+        
+        
+        private void OnRelease(PointerEventData obj)
+        {
+            throw new System.NotImplementedException();
+        }
+
     }
 }
