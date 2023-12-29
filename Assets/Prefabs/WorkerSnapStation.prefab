@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 519826318165966046}
   - component: {fileID: 1511659124676919317}
   - component: {fileID: 2910120034324089187}
+  - component: {fileID: 5327753747880921592}
   m_Layer: 0
   m_Name: WorkerSnapStation
   m_TagString: Untagged
@@ -178,6 +179,7 @@ MonoBehaviour:
     m_Bits: 8
   snapInterval: 0.5
   wrapWithDelay: 3
+  wrapAnimationTriggerName: Wrap
 --- !u!114 &2910120034324089187
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -194,3 +196,25 @@ MonoBehaviour:
   sleepingState: {fileID: 11400000, guid: 5719ed6e307834e089ae3d05c408a2ce, type: 2}
   workingState: {fileID: 11400000, guid: f1f820c71a1854257a160b8d11fa5283, type: 2}
   initialState: 1
+  animator: {fileID: 5327753747880921592}
+--- !u!95 &5327753747880921592
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4107714099347010840}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b5e6afbdb7214ab08d5dcb7a77d83a6, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

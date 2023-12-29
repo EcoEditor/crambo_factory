@@ -6,11 +6,11 @@ namespace Workers.WorkerStates
     [CreateAssetMenu(fileName = "SleepingState", menuName = "Crembo Factory / Workers / Sleeping State")]
     public class SleepingState : State
     {
-        [SerializeField] private Sprite sleepingSprite;
+        [SerializeField] private string sleepStateAnimationTrigger;
         
         public override void Enter()
         {
-            MessagingSystem.SetWorkerSprite?.Invoke(sleepingSprite);
+            MessagingSystem.SetWorkerAnimationTrigger?.Invoke(sleepStateAnimationTrigger);
         }
 
         public override void Exit()

@@ -1,3 +1,4 @@
+using CremboFactory;
 using UnityEngine;
 using Workers;
 using Workers.WorkerStates;
@@ -10,7 +11,8 @@ namespace DefaultNamespace
         [SerializeField] private LayerMask cremboMask;
         [SerializeField] private float snapInterval = 0.5f;
         [SerializeField] private float wrapWithDelay = 0.4f;
-
+        [SerializeField] private string wrapAnimationTriggerName = "Wrap";
+        
         private WorkerController _worker;
         private Transform _transform;
         private Crembo _selectedCrembo;
@@ -50,6 +52,7 @@ namespace DefaultNamespace
                 }
                 _selectedCrembo.SnapToStation();
                 _selectedCrembo.transform.position = _transform.position;
+                MessagingSystem.SetWorkerAnimationTrigger?.Invoke(wrapAnimationTriggerName);
                 Invoke(nameof(WrapCrembo), wrapWithDelay);
             }
         }
