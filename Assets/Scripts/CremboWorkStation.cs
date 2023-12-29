@@ -50,9 +50,18 @@ namespace DefaultNamespace
                     _selectedCrembo = null;
                     return;
                 }
+
+                var direction = _selectedCrembo.transform.position.y - _transform.position.y;
+
+                if (direction < 0)
+                {
+                    _selectedCrembo = null;
+                    return;
+                }
+                
                 _selectedCrembo.SnapToStation();
                 _selectedCrembo.transform.position = _transform.position;
-                MessagingSystem.SetWorkerAnimationTrigger?.Invoke(wrapAnimationTriggerName);
+                MessagingSystem.SetWorkerAnimationTrigger?.Invoke(_worker.WorkerIndex, wrapAnimationTriggerName);
                 Invoke(nameof(WrapCrembo), wrapWithDelay);
             }
         }

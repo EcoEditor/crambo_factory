@@ -9,8 +9,9 @@ namespace Workers
     public class WorkersController : MonoBehaviour
     {
         [SerializeField] private Vector2 stateShiftRange = new Vector2(2f, 10f);
+        
         private List<WorkerController> _workers;
-
+        
         private float _elapsedTime;
         private float _randomDelay;
         private void Awake()
@@ -26,6 +27,7 @@ namespace Workers
             if (_elapsedTime >= _randomDelay)
             {
                 _randomDelay = Random.Range(stateShiftRange.x, stateShiftRange.y);
+                _elapsedTime = 0f;
                 ChangeWorkerState();
             }
         }
@@ -34,11 +36,6 @@ namespace Workers
         {
             var randomIndex = Random.Range(0, _workers.Count);
             var randomWorker = _workers[randomIndex];
-            if (randomWorker.MyState is SleepingState)
-            {
-                // Maybe do something if is sleeping
-            }
-            
             randomWorker.ChangeState(WorkerStates.WorkerStates.Sleeping);
         }
     }

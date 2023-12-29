@@ -9,6 +9,8 @@ namespace CremboFactory
         public static Action<float> RotationSpeed;
         public static Action FailedCremboWrapping;
         public static Action SuccessCremboWrapping;
-        public static Action<string> SetWorkerAnimationTrigger;
+        public static Action<int> WakeupWorker;
+        public static Action<int, string> SetWorkerAnimationTrigger;
+        public static Action<int, string, bool> SetWorkerAnimationBool;
     }
 }

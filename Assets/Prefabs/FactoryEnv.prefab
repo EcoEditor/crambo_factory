@@ -219,7 +219,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 60e93b5048c34713817e2e15af368998, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stateShiftRange: {x: 2, y: 10}
+  stateShiftRange: {x: 10, y: 20}
 --- !u!1 &5428738388146899209
 GameObject:
   m_ObjectHideFlags: 0
@@ -365,10 +365,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af5e22b01a8b4a1d946b6b4adc80d710, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  workerIndex: 0
   stateSpriteRenderer: {fileID: 0}
   sleepingState: {fileID: 11400000, guid: 5719ed6e307834e089ae3d05c408a2ce, type: 2}
   workingState: {fileID: 11400000, guid: f1f820c71a1854257a160b8d11fa5283, type: 2}
   initialState: 1
+  animator: {fileID: 0}
 --- !u!1001 &21552998414098331
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -432,6 +434,10 @@ PrefabInstance:
     - target: {fileID: 1409032482884216113, guid: bcecd3904519b4a0884ad319e0295a24, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2910120034324089187, guid: bcecd3904519b4a0884ad319e0295a24, type: 3}
+      propertyPath: workerIndex
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4107714099347010840, guid: bcecd3904519b4a0884ad319e0295a24, type: 3}
       propertyPath: m_Name
@@ -580,6 +586,10 @@ PrefabInstance:
     - target: {fileID: 1409032482884216113, guid: bcecd3904519b4a0884ad319e0295a24, type: 3}
       propertyPath: m_ConstrainProportionsScale
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2910120034324089187, guid: bcecd3904519b4a0884ad319e0295a24, type: 3}
+      propertyPath: workerIndex
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4107714099347010840, guid: bcecd3904519b4a0884ad319e0295a24, type: 3}
       propertyPath: m_Name

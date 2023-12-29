@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 91a509b1aa7e4969abc7de2094861f49, type: 3}
   m_Name: WorkingState
   m_EditorClassIdentifier: 
-  workStateAnimationTrigger: Idle
+  workStateAnimationTrigger: IsSleeping
