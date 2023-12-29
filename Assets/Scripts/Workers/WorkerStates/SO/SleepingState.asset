@@ -12,3 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 873202e138da4da498330b915a419cd4, type: 3}
   m_Name: SleepingState
   m_EditorClassIdentifier: 
+  sleepStateAnimationTrigger: Sleeping

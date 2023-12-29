@@ -183,9 +183,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1d137a8c5208419c979ccd0d7b027ce3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  model: {fileID: 11400000, guid: 5e818fb2fa48b471fabdead3d8b6a099, type: 2}
   moveSpeed: 1.2
   wrappedCrembo: {fileID: 193794249940841391}
   wrappedSortOrder: 12
+  minYPosition: -5
 --- !u!58 &5242312334050621703
 CircleCollider2D:
   m_ObjectHideFlags: 0

@@ -4,11 +4,14 @@ namespace DefaultNamespace
 {
     public class Crembo : MonoBehaviour
     {
+        [SerializeField] private GameModel model;
         [SerializeField] private float moveSpeed = 1.2f;
         [SerializeField] private SpriteRenderer wrappedCrembo;
         [SerializeField] private int wrappedSortOrder = 12;
+        [SerializeField] private float minYPosition = -5f;
         
         private Transform _transform;
+        private Vector3 _initialPosition;
         private float _currentSpeed;
         private bool _isWrapped;
 
@@ -22,7 +25,16 @@ namespace DefaultNamespace
         private void Update()
         {
             if (_currentSpeed <= 0) return;
+            if (_transform.position.y <= minYPosition)
+            {
+                HandleBeltEnd();
+            }
             _transform.Translate(Vector2.down * moveSpeed * Time.deltaTime);
+        }
+
+        public void SetInitialPosition(Vector3 spawnPosition)
+        {
+            _initialPosition = spawnPosition;
         }
 
         public void SnapToStation()
@@ -40,6 +52,26 @@ namespace DefaultNamespace
         private void SetWrappedSortOrder(int so)
         {
             wrappedCrembo.sortingOrder = so;
+        }
+
+        /// <summary>
+        /// At the end of the belt,
+        /// update game model if crembo is wrapped or missed
+        /// reuse crembo again
+        /// </summary>
+        private void HandleBeltEnd()
+        {
+            if (_isWrapped)
+            {
+                model.IncreaseWrappedCrembo();
+            } else
+            {
+                model.IncreaseMissedCrembo();
+            }
+            
+            _transform.position = _initialPosition;
+            _isWrapped = false;
+            SetWrappedSortOrder(0);
         }
 
         public bool IsWrapped => _isWrapped;

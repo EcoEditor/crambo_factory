@@ -1,4 +1,7 @@
+using CremboFactory;
 using UnityEngine;
+using Workers;
+using Workers.WorkerStates;
 
 namespace DefaultNamespace
 {
@@ -8,7 +11,9 @@ namespace DefaultNamespace
         [SerializeField] private LayerMask cremboMask;
         [SerializeField] private float snapInterval = 0.5f;
         [SerializeField] private float wrapWithDelay = 0.4f;
+        [SerializeField] private string wrapAnimationTriggerName = "Wrap";
         
+        private WorkerController _worker;
         private Transform _transform;
         private Crembo _selectedCrembo;
         private float _elapsedTime;
@@ -16,6 +21,7 @@ namespace DefaultNamespace
         private void Awake()
         {
             _transform = transform;
+            _worker = GetComponent<WorkerController>();
         }
 
         private void Update()
@@ -31,6 +37,8 @@ namespace DefaultNamespace
 
         private void SnapToWorkStation()
         {
+            if (_worker.MyState is SleepingState) return;
+            
             var hitCollider = Physics2D.OverlapCircle(_transform.position, overlapRadius, cremboMask);
 
             if (hitCollider)
@@ -43,7 +51,8 @@ namespace DefaultNamespace
                     return;
                 }
                 _selectedCrembo.SnapToStation();
-                _selectedCrembo.transform.position = _selectedCrembo.transform.position;
+                _selectedCrembo.transform.position = _transform.position;
+                MessagingSystem.SetWorkerAnimationTrigger?.Invoke(wrapAnimationTriggerName);
                 Invoke(nameof(WrapCrembo), wrapWithDelay);
             }
         }
@@ -54,10 +63,10 @@ namespace DefaultNamespace
             _selectedCrembo = null;
         }
 
-        public void OnDrawGizmos()
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(transform.position, overlapRadius);
-        }
+        // public void OnDrawGizmos()
+        // {
+        //     Gizmos.color = Color.blue;
+        //     Gizmos.DrawSphere(transform.position, overlapRadius);
+        // }
     }
 }
