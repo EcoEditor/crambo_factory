@@ -36,8 +36,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 257, y: 0}
-  m_SizeDelta: {x: 160, y: 160}
+  m_AnchoredPosition: {x: 217.0918, y: 36.177612}
+  m_SizeDelta: {x: 239.8165, y: 232.3553}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3283143028267611226
 CanvasRenderer:
@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.42745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -135,7 +135,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionButton: {fileID: 8847476799876605025}
   workerIndex: 1
-  idleTriggerName: IsSleeping
 --- !u!1 &1618184595721050634
 GameObject:
   m_ObjectHideFlags: 0
@@ -276,7 +275,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Crambo Wapper
+  m_text: 
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -532,7 +531,6 @@ GameObject:
   - component: {fileID: 5352637373926197869}
   - component: {fileID: 6994065572786647451}
   - component: {fileID: 1794449374292967905}
-  - component: {fileID: 8425273946553534885}
   m_Layer: 5
   m_Name: Crembo Wrapper
   m_TagString: Untagged
@@ -581,7 +579,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.5803922}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -598,21 +596,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8425273946553534885
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4752574015900108584}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d2cc42bb543214ea79760395071877f5, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  initialRotationSpeed: 2
-  sensitivity: 5
-  objectToRotate: {fileID: 0}
 --- !u!1 &5189232434880611998
 GameObject:
   m_ObjectHideFlags: 0
@@ -897,7 +880,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3648801808718244387
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1036,8 +1019,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 749, y: -243}
-  m_SizeDelta: {x: 160, y: 160}
+  m_AnchoredPosition: {x: 733.02344, y: -222.7186}
+  m_SizeDelta: {x: 191.9531, y: 200.5628}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &990441844010572756
 CanvasRenderer:
@@ -1060,7 +1043,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.42745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1135,7 +1118,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionButton: {fileID: 8835167131542787406}
   workerIndex: 2
-  idleTriggerName: IsSleeping
 --- !u!1 &7016549689760749381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1244,8 +1226,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 749, y: 243}
-  m_SizeDelta: {x: 160, y: 160}
+  m_AnchoredPosition: {x: 722.4697, y: 274.85022}
+  m_SizeDelta: {x: 213.0607, y: 223.7004}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3137616542194267252
 CanvasRenderer:
@@ -1268,7 +1250,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 0.42745098}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1343,4 +1325,3 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   interactionButton: {fileID: 84305451484808281}
   workerIndex: 0
-  idleTriggerName: IsSleeping

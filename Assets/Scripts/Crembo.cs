@@ -12,6 +12,7 @@ namespace DefaultNamespace
         
         private Transform _transform;
         private Vector3 _initialPosition;
+        private Vector3 _currentPosition;
         private float _currentSpeed;
         private bool _isWrapped;
 
@@ -39,6 +40,7 @@ namespace DefaultNamespace
 
         public void SnapToStation()
         {
+            _currentPosition = _transform.position;
             _currentSpeed = 0;
         }
 
@@ -46,6 +48,7 @@ namespace DefaultNamespace
         {
             SetWrappedSortOrder(wrappedSortOrder);
             _currentSpeed = moveSpeed;
+            _transform.position = new Vector3(_currentPosition.x, _currentPosition.y - 1f, _currentPosition.z);
             _isWrapped = true;
         }
 
