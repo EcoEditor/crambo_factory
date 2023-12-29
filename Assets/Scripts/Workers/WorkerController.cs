@@ -6,6 +6,7 @@ namespace Workers
 {
     public class WorkerController : MonoBehaviour
     {
+        [SerializeField] private int workerIndex;
         [SerializeField] private SpriteRenderer stateSpriteRenderer;
         [SerializeField] private SleepingState sleepingState;
         [SerializeField] private WorkingState workingState;
@@ -18,18 +19,42 @@ namespace Workers
         private void Awake()
         {
             _stateFactory = new WorkersStateFactory(sleepingState, workingState);
-            MessagingSystem.SetWorkerAnimationTrigger += SetWorkerSprite;
+            MessagingSystem.SetWorkerAnimationBool += SetWorkerAnimationBool;
+            MessagingSystem.SetWorkerAnimationTrigger += SetWorkerAnimationTrigger;
+            MessagingSystem.WakeupWorker += OnWakeupWorker;
             ChangeState(initialState);
         }
 
         private void OnDestroy()
         {            
-            MessagingSystem.SetWorkerAnimationTrigger -= SetWorkerSprite;
+            MessagingSystem.SetWorkerAnimationBool += SetWorkerAnimationBool;
+            MessagingSystem.SetWorkerAnimationTrigger -= SetWorkerAnimationTrigger;
+            MessagingSystem.WakeupWorker -= OnWakeupWorker;
+        }
+        
+        private void SetWorkerAnimationTrigger(int index, string triggerName)
+        {
+            if (workerIndex == index)
+            {
+                animator.SetTrigger(triggerName);
+            }
+        }
+        
+        private void OnWakeupWorker(int index)
+        {
+            if (workerIndex == index)
+            {
+                ChangeState(WorkerStates.WorkerStates.Working);
+            }
         }
 
-        private void SetWorkerSprite(string triggerName)
+
+        private void SetWorkerAnimationBool(int index, string boolName, bool isSleeping)
         {
-            animator.SetTrigger(triggerName);
+            if (workerIndex == index)
+            {
+                animator.SetBool(boolName, isSleeping);
+            }
         }
 
         public void ChangeState(WorkerStates.WorkerStates stateType)
@@ -41,9 +66,11 @@ namespace Workers
             }
 
             _state = _stateFactory.Create(stateType);
-            _state.Enter();
+            _state.Enter(this);
+            Debug.Log($"Changed to state {stateType}");
         }
 
         public State MyState => _state;
+        public int WorkerIndex => workerIndex;
     }
 }

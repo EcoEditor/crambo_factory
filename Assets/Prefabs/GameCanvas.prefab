@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3283143028267611226}
   - component: {fileID: 391822579322326792}
   - component: {fileID: 8847476799876605025}
+  - component: {fileID: 4084808921542436458}
   m_Layer: 5
   m_Name: Worker1
   m_TagString: Untagged
@@ -59,7 +60,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -120,6 +121,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &4084808921542436458
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 399285247680573263}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9150abcf8f460e810a0b177833dd76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionButton: {fileID: 8847476799876605025}
+  workerIndex: 1
+  idleTriggerName: IsSleeping
 --- !u!1 &1618184595721050634
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,7 +153,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &4134086662757872249
 RectTransform:
   m_ObjectHideFlags: 0
@@ -996,6 +1012,7 @@ GameObject:
   - component: {fileID: 990441844010572756}
   - component: {fileID: 3733930024681947685}
   - component: {fileID: 8835167131542787406}
+  - component: {fileID: 1763687051621712916}
   m_Layer: 5
   m_Name: Worker3
   m_TagString: Untagged
@@ -1043,7 +1060,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1104,6 +1121,21 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &1763687051621712916
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6859880044697142307}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9150abcf8f460e810a0b177833dd76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionButton: {fileID: 8835167131542787406}
+  workerIndex: 2
+  idleTriggerName: IsSleeping
 --- !u!1 &7016549689760749381
 GameObject:
   m_ObjectHideFlags: 0
@@ -1188,6 +1220,7 @@ GameObject:
   - component: {fileID: 3137616542194267252}
   - component: {fileID: 6010305290941996913}
   - component: {fileID: 84305451484808281}
+  - component: {fileID: 6953929299085802635}
   m_Layer: 5
   m_Name: Worker2
   m_TagString: Untagged
@@ -1235,7 +1268,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0.42745098}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -1296,3 +1329,18 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &6953929299085802635
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7648332562818654904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: da9150abcf8f460e810a0b177833dd76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  interactionButton: {fileID: 84305451484808281}
+  workerIndex: 0
+  idleTriggerName: IsSleeping
