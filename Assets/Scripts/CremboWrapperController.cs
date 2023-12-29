@@ -6,6 +6,7 @@ namespace CremboFactory
 {
     public class CremboWrapperController : MonoBehaviour
     {
+        [SerializeField] private GameModel model;
         [SerializeField] private float wrappingSpeedThreshold = 30f;
         [SerializeField] private float wrappingDuration = 10f;
 
@@ -21,12 +22,17 @@ namespace CremboFactory
     public float wrapped_threashold = 150f;
     public float max_move = 1.2f;
 
+    public float initializeDelay = 10f;
+
     public int wrapped_crambo_count = 0;
     public int crambo_missed_count = 0;
 
     public GameObject wrapped_crambo;
     public GameObject exploed_crambo;
-    public Animator crambo_wrap;
+    public Animator crambo_wrap_anim;
+    public Animator crambo_exploed_anim;
+    public float timeRemaining = 30f;
+
         private void Awake()
         {
             MessagingSystem.CremboWrapStarted += OnCremboWrapStarted;
@@ -67,8 +73,20 @@ namespace CremboFactory
         }
 
         void Update () {
+
+        if (timeRemaining > 0)
+        {
+            
+            timeRemaining -= Time.deltaTime;
+        }
+        if (timeRemaining < 1)
+        {
+            crambo_creashed();
+        }
+
+
 		if (!Input.GetMouseButton(0)){
-            crambo_wrap.speed = 0f;
+            crambo_wrap_anim.speed = 0f;
         }
 		if(Input.GetAxis("Mouse X")<0 && Input.GetMouseButton(0))
 		{
@@ -80,7 +98,7 @@ namespace CremboFactory
 
             }
             else{
-                crambo_wrap.speed = 1f;
+                crambo_wrap_anim.speed = 3f;
                 sum_move += move;
             }
 
@@ -91,39 +109,67 @@ namespace CremboFactory
 			Crambo.transform.Rotate(0, 0, move);
             if(move>max_move)
             {
+                print("DID CRASH");
                 crambo_creashed();
 
             }
             else{
-                crambo_wrap.speed = 1f;
+                crambo_wrap_anim.speed = 3f;
                 sum_move += move;
 
             }
             
 		}
     else if(sum_move>wrapped_threashold){
+        crambo_wrapped();
+        //inital_crambo();
         
-        wrapped_crambo_count += 1;
-        wrapped_crambo.SetActive(false);
     }
 		else  
 		{
-            crambo_wrap.speed = 0f;
+            crambo_wrap_anim.speed = 0f;
 			var rotation = Quaternion.LookRotation(target.position - transform.position);
 			transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
-			print("boat straightening out");
 			
 		}
 		
 	}
 
+    private void crambo_wrapped()
+    {
+        if(wrapped_crambo.activeSelf)
+        {
+            model.IncreaseWrappedCrembo();
+            wrapped_crambo.SetActive(false);
+            Invoke(nameof(inital_crambo), initializeDelay);
+        }
+        
+    }
     private void crambo_creashed()
     {
-        crambo_missed_count += 1;
-        wrapped_crambo.SetActive(false);
-        exploed_crambo.SetActive(true);
+        if(wrapped_crambo.activeSelf)
+        {
+            model.IncreaseMissedCrembo();
+            wrapped_crambo.SetActive(false);
+            exploed_crambo.SetActive(true);
+            Invoke(nameof(inital_crambo), initializeDelay);
+        }
+        
     }
 
+    private void inital_crambo()
+    {
+        if(wrapped_crambo.activeSelf == false)
+        {
+            exploed_crambo.SetActive(false);
+            wrapped_crambo.SetActive(true);
+            crambo_wrap_anim.Update(0f);
+            crambo_exploed_anim.Update(0f);
+            timeRemaining = 30f;
+            sum_move = 0f;
+        }
+        
+    }
         
     }
 }
