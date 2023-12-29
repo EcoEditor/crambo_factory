@@ -1,4 +1,5 @@
 using System;
+using UnityEngine;
 
 namespace CremboFactory
 {
@@ -8,5 +9,6 @@ namespace CremboFactory
         public static Action<float> RotationSpeed;
         public static Action FailedCremboWrapping;
         public static Action SuccessCremboWrapping;
+        public static Action<Sprite> SetWorkerSprite;
     }
 }

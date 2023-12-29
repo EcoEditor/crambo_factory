@@ -1,4 +1,6 @@
 using UnityEngine;
+using Workers;
+using Workers.WorkerStates;
 
 namespace DefaultNamespace
 {
@@ -8,7 +10,8 @@ namespace DefaultNamespace
         [SerializeField] private LayerMask cremboMask;
         [SerializeField] private float snapInterval = 0.5f;
         [SerializeField] private float wrapWithDelay = 0.4f;
-        
+
+        private WorkerController _worker;
         private Transform _transform;
         private Crembo _selectedCrembo;
         private float _elapsedTime;
@@ -16,6 +19,7 @@ namespace DefaultNamespace
         private void Awake()
         {
             _transform = transform;
+            _worker = GetComponent<WorkerController>();
         }
 
         private void Update()
@@ -31,6 +35,8 @@ namespace DefaultNamespace
 
         private void SnapToWorkStation()
         {
+            if (_worker.MyState is SleepingState) return;
+            
             var hitCollider = Physics2D.OverlapCircle(_transform.position, overlapRadius, cremboMask);
 
             if (hitCollider)
@@ -43,7 +49,7 @@ namespace DefaultNamespace
                     return;
                 }
                 _selectedCrembo.SnapToStation();
-                _selectedCrembo.transform.position = _selectedCrembo.transform.position;
+                _selectedCrembo.transform.position = _transform.position;
                 Invoke(nameof(WrapCrembo), wrapWithDelay);
             }
         }
