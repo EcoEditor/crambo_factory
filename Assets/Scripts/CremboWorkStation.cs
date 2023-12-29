@@ -54,10 +54,10 @@ namespace DefaultNamespace
             _selectedCrembo = null;
         }
 
-        public void OnDrawGizmos()
-        {
-            Gizmos.color = Color.blue;
-            Gizmos.DrawSphere(transform.position, overlapRadius);
-        }
+        // public void OnDrawGizmos()
+        // {
+        //     Gizmos.color = Color.blue;
+        //     Gizmos.DrawSphere(transform.position, overlapRadius);
+        // }
     }
 }

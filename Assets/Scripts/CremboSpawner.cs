@@ -9,7 +9,7 @@ namespace DefaultNamespace
         [SerializeField] private float spawnInterval = 3f;
         [SerializeField] private int maxCremboAmount = 10;
         [SerializeField] private Crembo cremboRef;
-        [SerializeField] private Transform spawnPosition;
+        [SerializeField] private Transform spawnParent;
 
         private HashSet<Crembo> _spawnedCrembo = new HashSet<Crembo>();
         private WaitForSeconds _spawnDelay;
@@ -28,7 +28,8 @@ namespace DefaultNamespace
         {
             while (_spawnedCrembo.Count < maxCremboAmount)
             {
-                var crembo = Instantiate(cremboRef, spawnPosition);
+                var crembo = Instantiate(cremboRef, spawnParent);
+                crembo.SetInitialPosition(spawnParent.position);
                 _spawnedCrembo.Add(crembo);
                 yield return _spawnDelay;
             }
