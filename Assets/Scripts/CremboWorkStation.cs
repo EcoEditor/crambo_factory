@@ -43,7 +43,7 @@ namespace DefaultNamespace
                     return;
                 }
                 _selectedCrembo.SnapToStation();
-                _selectedCrembo.transform.position = _transform.position;
+                _selectedCrembo.transform.position = _selectedCrembo.transform.position;
                 Invoke(nameof(WrapCrembo), wrapWithDelay);
             }
         }

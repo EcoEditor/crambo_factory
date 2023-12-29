@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 
+
 namespace CremboFactory
 {
     public class CremboWrapperController : MonoBehaviour
@@ -10,7 +11,9 @@ namespace CremboFactory
 
         private float _startTime;
         private float _endTime;
-        
+	public GameObject Crambo;
+	private Vector3 direction = Vector3.forward;
+
         private void Awake()
         {
             MessagingSystem.CremboWrapStarted += OnCremboWrapStarted;
@@ -39,11 +42,17 @@ namespace CremboFactory
 
         private void OnRotationSpeed(float rotationSpeed)
         {
+        Debug.Log(rotationSpeed);
+
+		Vector3 velocity = rotationSpeed * direction;
+		Crambo.GetComponent<Rigidbody>().velocity = velocity;
             if (rotationSpeed > wrappingSpeedThreshold)
             {
                 Debug.Log("Rotation is TOO FAST! FAILED");
                 MessagingSystem.FailedCremboWrapping?.Invoke();
             }
         }
+
+        
     }
 }
