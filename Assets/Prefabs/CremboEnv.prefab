@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 330960311403308655}
   - component: {fileID: 7279810646790078741}
+  - component: {fileID: 8676090869338738727}
   m_Layer: 0
   m_Name: crambo2d_wrapp
   m_TagString: Untagged
@@ -84,6 +85,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &8676090869338738727
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 889270288771452908}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e474b0bda4dc08a43b9c9d05b0e12e12, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1187259137519278509
 GameObject:
   m_ObjectHideFlags: 0
@@ -93,7 +115,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1031979647531718909}
-  - component: {fileID: 4866195513761053111}
   m_Layer: 0
   m_Name: Crambo
   m_TagString: Untagged
@@ -110,7 +131,7 @@ Transform:
   m_GameObject: {fileID: 1187259137519278509}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.040989757, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -118,33 +139,6 @@ Transform:
   - {fileID: 8376850928717023324}
   m_Father: {fileID: 2743112952384619509}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &4866195513761053111
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1187259137519278509}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 2
 --- !u!1 &2507061018027357849
 GameObject:
   m_ObjectHideFlags: 0
@@ -194,6 +188,16 @@ MonoBehaviour:
   wrappingSpeedThreshold: 30
   wrappingDuration: 10
   Crambo: {fileID: 1187259137519278509}
+  damping: 2
+  speed: 1
+  target: {fileID: 1031979647531718909}
+  wrapped_threashold: 50
+  max_move: 2
+  wrapped_crambo_count: 0
+  crambo_missed_count: 0
+  wrapped_crambo: {fileID: 889270288771452908}
+  exploed_crambo: {fileID: 3702948946811738983}
+  crambo_wrap: {fileID: 8676090869338738727}
 --- !u!1 &3434047982945987155
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +215,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2658215452111810793
 Transform:
   m_ObjectHideFlags: 0
@@ -287,6 +291,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8376850928717023324}
   - component: {fileID: 844210231782363192}
+  - component: {fileID: 5298136929300051014}
   m_Layer: 0
   m_Name: crambo2d_explode
   m_TagString: Untagged
@@ -361,6 +366,27 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!95 &5298136929300051014
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3702948946811738983}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7121a6c0324ed8846bb25b5409ce7ba7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &3910826044639613453
 GameObject:
   m_ObjectHideFlags: 0
