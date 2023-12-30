@@ -48,7 +48,7 @@ namespace DefaultNamespace
         {
             SetWrappedSortOrder(wrappedSortOrder);
             _currentSpeed = moveSpeed;
-            _transform.position = new Vector3(_currentPosition.x, _currentPosition.y - 1f, _currentPosition.z);
+            _transform.position = new Vector3(_currentPosition.x, _currentPosition.y - 1.2f, _currentPosition.z);
             _isWrapped = true;
         }
 
