@@ -539,6 +539,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5587199522720833107, guid: 445d993cbff674aaab5046a506f07858, type: 3}
+      propertyPath: timeRemaining
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 5587199522720833107, guid: 445d993cbff674aaab5046a506f07858, type: 3}
+      propertyPath: wrapped_threashold
+      value: 1.3
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -802,9 +810,17 @@ PrefabInstance:
       value: GameCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 7817421377051860917, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
+      propertyPath: gameModel
+      value: 
+      objectReference: {fileID: 11400000, guid: 5e818fb2fa48b471fabdead3d8b6a099, type: 2}
+    - target: {fileID: 7817421377051860917, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
       propertyPath: exitButton
       value: 
       objectReference: {fileID: 6682084065268087922}
+    - target: {fileID: 7817421377051860917, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
+      propertyPath: missedCremboThreshold
+      value: 200
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
