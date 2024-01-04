@@ -167,6 +167,8 @@ namespace CremboFactory
             crambo_exploed_anim.Update(0f);
             timeRemaining = 30f;
             sum_move = 0f;
+            Crambo.transform.rotation = Quaternion.identity;
+
         }
         
     }
