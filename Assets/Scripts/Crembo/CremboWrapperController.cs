@@ -52,10 +52,6 @@ namespace CremboFactory
             } else
             {
                 _endTime = Time.time;
-                if (_endTime - _startTime < wrappingDuration)
-                {
-                    
-                }
             }
         }
 
@@ -73,67 +69,58 @@ namespace CremboFactory
         }
 
         void Update () {
-
-        if (timeRemaining > 0)
-        {
-            
-            timeRemaining -= Time.deltaTime;
-        }
-        if (timeRemaining < 1)
-        {
-            crambo_creashed();
-        }
-
-
-		if (!Input.GetMouseButton(0)){
-            crambo_wrap_anim.speed = 0f;
-        }
-		if(Input.GetAxis("Mouse X")<0 && Input.GetMouseButton(0))
-		{
-            move = Mathf.Abs(Input.GetAxis("Mouse X")  * speed);
-			Crambo.transform.Rotate(0, 0, -move );
-            if(move>max_move)
+            if (timeRemaining > 0)
+            {
+                timeRemaining -= Time.deltaTime;
+            }
+            if (timeRemaining < 1)
             {
                 crambo_creashed();
-
-            }
-            else{
-                crambo_wrap_anim.speed = 3f;
-                sum_move += move;
             }
 
-		}
-	else if(Input.GetAxis("Mouse X")>0 && Input.GetMouseButton(0))
-		{
-            move = Mathf.Abs(Input.GetAxis("Mouse X")  * speed);
-			Crambo.transform.Rotate(0, 0, move);
-            if(move>max_move)
-            {
-                print("DID CRASH");
-                crambo_creashed();
-
+		    if (!Input.GetMouseButton(0)){
+                crambo_wrap_anim.speed = 0f;
             }
-            else{
-                crambo_wrap_anim.speed = 3f;
-                sum_move += move;
+		    if(Input.GetAxis("Mouse X")<0 && Input.GetMouseButton(0))
+		    {
+                move = Mathf.Abs(Input.GetAxis("Mouse X")  * speed);
+			    Crambo.transform.Rotate(0, 0, -move );
+                if(move>max_move)
+                {
+                    crambo_creashed();
+                }
+                else{
+                    crambo_wrap_anim.speed = 3f;
+                    sum_move += move;
+                    Debug.Log($"sum move is {sum_move}");
+                }
+		    }
+	        else if(Input.GetAxis("Mouse X")>0 && Input.GetMouseButton(0))
+		    {
+                move = Mathf.Abs(Input.GetAxis("Mouse X")  * speed);
+			    Crambo.transform.Rotate(0, 0, move);
+                if(move>max_move)
+                {
+                    print("DID CRASH");
+                    crambo_creashed();
 
+                }
+                else{
+                    crambo_wrap_anim.speed = 3f;
+                    sum_move += move;
+                    Debug.Log($"sum move is {sum_move}");
+                }
+		    }
+            else if(sum_move>wrapped_threashold){
+                crambo_wrapped();
             }
-            
-		}
-    else if(sum_move>wrapped_threashold){
-        crambo_wrapped();
-        //inital_crambo();
-        
-    }
-		else  
-		{
-            crambo_wrap_anim.speed = 0f;
-			var rotation = Quaternion.LookRotation(target.position - transform.position);
-			transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
-			
-		}
-		
-	}
+		    else  
+		    {
+                crambo_wrap_anim.speed = 0f;
+			    var rotation = Quaternion.LookRotation(target.position - transform.position);
+			    transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * damping);
+		    }
+	    }
 
     private void crambo_wrapped()
     {
