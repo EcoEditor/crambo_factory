@@ -651,6 +651,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c34d3309f8a34413976acdf5d294e1f4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  missedCremboThreshold: 100
+  gameModel: {fileID: 0}
   exitButton: {fileID: 0}
 --- !u!223 &4167894934030445966
 Canvas:
