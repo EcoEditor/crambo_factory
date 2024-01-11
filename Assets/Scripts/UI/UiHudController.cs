@@ -1,5 +1,8 @@
 using TMPro;
 using UnityEngine;
+using DefaultNamespace;
+using UnityEngine;
+using UnityEngine.UI;
 
 namespace UI
 {
@@ -8,6 +11,7 @@ namespace UI
         [SerializeField] private GameModel gameModel; 
         [SerializeField] private TMP_Text wrappedCount;
         [SerializeField] private TMP_Text missedCount;
+        public int max_missed;
 
         private void Awake()
         {
@@ -34,6 +38,14 @@ namespace UI
         private void ChangedMissed()
         {
             missedCount.text = gameModel.MissedCrembo.ToString();
+            if (gameModel.MissedCrembo > max_missed)
+            {
+                ExitGame();
+            }
+        }
+        private void ExitGame()
+        {
+            GameManager.Instance.LoadGameOverScene();
         }
     }
 }
