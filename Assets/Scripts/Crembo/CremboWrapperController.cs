@@ -17,6 +17,7 @@ namespace CremboFactory
         public Transform target;
         private float move = 0f;
         public float max_move = 1.2f;
+        public float animation_speed = 2f;
 
         public float initializeDelay = 10f;
 
@@ -94,7 +95,7 @@ namespace CremboFactory
                     crambo_creashed();
                 } else
                 {
-                    crambo_wrap_anim.speed = 3f;
+                    crambo_wrap_anim.speed = animation_speed;
                 }
             } else if (Input.GetAxis("Mouse X") > 0 && Input.GetMouseButton(0))
             {
@@ -107,7 +108,7 @@ namespace CremboFactory
 
                 } else
                 {
-                    crambo_wrap_anim.speed = 3f;
+                    crambo_wrap_anim.speed = animation_speed;
                 }
             } else
             {

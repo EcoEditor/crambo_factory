@@ -68,6 +68,7 @@ namespace Workers
             _state = _stateFactory.Create(stateType);
             _state.Enter(this);
             Debug.Log($"Changed to state {stateType}");
+
         }
 
         public State MyState => _state;
