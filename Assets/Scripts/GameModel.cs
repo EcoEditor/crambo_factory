@@ -14,12 +14,15 @@ public class GameModel : ScriptableObject
     {
         _wrappedCrembo++;
         ChangedWrapped?.Invoke();
+        PlayerPrefs.SetInt("_wrappedCrembo", _wrappedCrembo);
     }
 
     public void IncreaseMissedCrembo()
     {
         _missedCrembo++;
         ChangedMissed?.Invoke();
+        PlayerPrefs.SetInt("_missedCrembo", _missedCrembo);
+
     }
 
     public void ResetCount()

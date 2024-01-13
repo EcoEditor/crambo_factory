@@ -32,11 +32,13 @@ namespace UI
 
         private void ChangedWrapped()
         {
+            PlayerPrefs.SetInt("_wrappedCrembo", gameModel.WrappedCrembos);
             wrappedCount.text = gameModel.WrappedCrembos.ToString();
         }
 
         private void ChangedMissed()
         {
+            PlayerPrefs.SetInt("_missedCrembo", gameModel.MissedCrembo);
             missedCount.text = gameModel.MissedCrembo.ToString();
             if (gameModel.MissedCrembo > max_missed)
             {

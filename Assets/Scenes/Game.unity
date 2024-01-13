@@ -123,6 +123,17 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!114 &26918599 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6810415722605820729, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
+  m_PrefabInstance: {fileID: 6682084065268087921}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &135931140 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5189232434880611998, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
@@ -185,6 +196,27 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 721afe9652e49446aa58c039b7048d8c, type: 3}
+--- !u!1 &1043040758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4152560434655508190, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
+  m_PrefabInstance: {fileID: 6682084065268087921}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1043040762
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1043040758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e5b4d7ed00b94a3281e6731c2bcd5a2d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameModel: {fileID: 11400000, guid: 5e818fb2fa48b471fabdead3d8b6a099, type: 2}
+  wrappedCount: {fileID: 26918599}
+  missedCount: {fileID: 1412145793}
+  max_missed: 2
 --- !u!224 &1266630392 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4827161104307810339, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
@@ -203,6 +235,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   exitButton: {fileID: 1715412155}
+--- !u!114 &1412145793 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6935577170057077307, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
+  m_PrefabInstance: {fileID: 6682084065268087921}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1540459137
 GameObject:
   m_ObjectHideFlags: 0
@@ -827,7 +870,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5587199522720833107, guid: 445d993cbff674aaab5046a506f07858, type: 3}
       propertyPath: animation_speed
-      value: 20
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 7279810646790078741, guid: 445d993cbff674aaab5046a506f07858, type: 3}
+      propertyPath: m_Size.x
+      value: 19.22443
+      objectReference: {fileID: 0}
+    - target: {fileID: 7279810646790078741, guid: 445d993cbff674aaab5046a506f07858, type: 3}
+      propertyPath: m_Size.y
+      value: 10.820001
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -940,7 +991,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6257991786399099014, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
       propertyPath: max_missed
-      value: 35
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6376367850509710040, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
       propertyPath: m_SizeDelta.x
@@ -975,7 +1026,10 @@ PrefabInstance:
     - {fileID: 509560476712940893, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
     - {fileID: 7014449957751169537, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4152560434655508190, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
+      insertIndex: 1
+      addedObject: {fileID: 1043040762}
   m_SourcePrefab: {fileID: 100100000, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
 --- !u!1001 &7225931875887346272
 PrefabInstance:
