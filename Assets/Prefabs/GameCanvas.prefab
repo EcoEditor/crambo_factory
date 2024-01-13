@@ -652,7 +652,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   missedCremboThreshold: 100
-  gameModel: {fileID: 0}
+  gameModel: {fileID: 11400000, guid: 5e818fb2fa48b471fabdead3d8b6a099, type: 2}
   exitButton: {fileID: 0}
 --- !u!223 &4167894934030445966
 Canvas:

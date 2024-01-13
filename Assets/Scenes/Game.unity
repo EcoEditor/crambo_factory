@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.411449, g: 0.4362413, b: 0.44598395, a: 1}
+  m_IndirectSpecularColor: {r: 0.41144854, g: 0.43624076, b: 0.4459833, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -134,11 +134,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &135931140 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 5189232434880611998, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
-  m_PrefabInstance: {fileID: 9033059136743056506}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &694675090
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -222,19 +217,6 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 4827161104307810339, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
   m_PrefabInstance: {fileID: 9033059136743056506}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1266630398
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 135931140}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0b72ec20f4d74090bbcc1f372b081cee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  exitButton: {fileID: 1715412155}
 --- !u!114 &1412145793 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6935577170057077307, guid: 0a5ab4d522f0b4095b45d2ea07e70739, type: 3}
@@ -1181,23 +1163,16 @@ PrefabInstance:
       value: GameCanvas
       objectReference: {fileID: 0}
     - target: {fileID: 7817421377051860917, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
-      propertyPath: gameModel
-      value: 
-      objectReference: {fileID: 11400000, guid: 5e818fb2fa48b471fabdead3d8b6a099, type: 2}
-    - target: {fileID: 7817421377051860917, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
       propertyPath: exitButton
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 1715412155}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4827161104307810339, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
       insertIndex: 1
       addedObject: {fileID: 1715412154}
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 5189232434880611998, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
-      insertIndex: 1
-      addedObject: {fileID: 1266630398}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1a5925f841cf6486a89196631f22c88a, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:

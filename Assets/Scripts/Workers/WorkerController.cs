@@ -11,16 +11,13 @@ namespace Workers
         [SerializeField] private SleepingState sleepingState;
         [SerializeField] private WorkingState workingState;
         [SerializeField] private WorkerStates.WorkerStates initialState;
-        private Animator animator;
+        [SerializeField] private Animator animator;
         
         private WorkersStateFactory _stateFactory;
         private State _state;
 
         private void Awake()
         {
-            animator = GetComponent<Animator>();
-            Debug.Log("1",animator);
-            animator.Play(Animator.StringToHash("Sleeping_animation"));
             _stateFactory = new WorkersStateFactory(sleepingState, workingState);
             MessagingSystem.SetWorkerAnimationBool += SetWorkerAnimationBool;
             MessagingSystem.SetWorkerAnimationTrigger += SetWorkerAnimationTrigger;
@@ -29,8 +26,8 @@ namespace Workers
         }
 
         private void OnDestroy()
-        {            
-            MessagingSystem.SetWorkerAnimationBool += SetWorkerAnimationBool;
+        {
+            MessagingSystem.SetWorkerAnimationBool -= SetWorkerAnimationBool;
             MessagingSystem.SetWorkerAnimationTrigger -= SetWorkerAnimationTrigger;
             MessagingSystem.WakeupWorker -= OnWakeupWorker;
         }
@@ -56,7 +53,6 @@ namespace Workers
         {
             if (workerIndex == index)
             {
-                Debug.Log("2",animator);
                 animator.SetBool(boolName, isSleeping);
             }
         }
@@ -72,7 +68,6 @@ namespace Workers
             _state = _stateFactory.Create(stateType);
             _state.Enter(this);
             Debug.Log($"Changed to state {stateType}");
-
         }
 
         public State MyState => _state;
